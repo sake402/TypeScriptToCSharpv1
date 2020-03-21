@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B44D0E5-C958-4330-8B6B-BB1203A0E755}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TypeScriptToCSharp</RootNamespace>
+    <AssemblyName>TypeScriptToCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSharp\CSharpProcessor.cs" />
+    <Compile Include="CSharp\Formatter\CommentFormatter.cs" />
+    <Compile Include="CSharp\Formatter\ICSharpFormatter.cs" />
+    <Compile Include="CSharp\Formatter\StringBuilderFormatter.cs" />
+    <Compile Include="CSharp\Lexicon\AbstractClass.cs" />
+    <Compile Include="CSharp\Lexicon\AccessSpecifier.cs" />
+    <Compile Include="CSharp\Lexicon\AliasType.cs" />
+    <Compile Include="CSharp\Lexicon\AnonymousInterface.cs" />
+    <Compile Include="CSharp\Lexicon\ArrayDataType.cs" />
+    <Compile Include="CSharp\Lexicon\Delegate.cs" />
+    <Compile Include="CSharp\Lexicon\GenericAbstractClass.cs" />
+    <Compile Include="CSharp\Lexicon\EnumeratedClass.cs" />
+    <Compile Include="CSharp\Lexicon\ImplicitType.cs" />
+    <Compile Include="CSharp\Lexicon\Literal.cs" />
+    <Compile Include="CSharp\Lexicon\Member.cs" />
+    <Compile Include="CSharp\Lexicon\Method.cs" />
+    <Compile Include="CSharp\Lexicon\Property.cs" />
+    <Compile Include="CSharp\Lexicon\ClosureType.cs" />
+    <Compile Include="CSharp\Lexicon\CSharpSyntax.cs" />
+    <Compile Include="CSharp\Lexicon\GenericUnionClass.cs" />
+    <Compile Include="CSharp\Lexicon\ICSharpClosure.cs" />
+    <Compile Include="CSharp\Lexicon\Comment.cs" />
+    <Compile Include="CSharp\Lexicon\CommentReturn.cs" />
+    <Compile Include="CSharp\Lexicon\CommentParam.cs" />
+    <Compile Include="CSharp\Lexicon\CommentSummary.cs" />
+    <Compile Include="CSharp\Lexicon\ConcreteClass.cs" />
+    <Compile Include="CSharp\Lexicon\EnumType.cs" />
+    <Compile Include="CSharp\Lexicon\INamedConstruct.cs" />
+    <Compile Include="CSharp\Lexicon\LookupObjectType.cs" />
+    <Compile Include="CSharp\Formatter\NameFormatter.cs" />
+    <Compile Include="CSharp\Lexicon\MethodDelegate.cs" />
+    <Compile Include="CSharp\Lexicon\Object.cs" />
+    <Compile Include="CSharp\Lexicon\CSharpConstruct.cs" />
+    <Compile Include="CSharp\Lexicon\FunctionDataType.cs" />
+    <Compile Include="CSharp\Lexicon\GenericInterface.cs" />
+    <Compile Include="CSharp\Lexicon\GenericClass.cs" />
+    <Compile Include="CSharp\Lexicon\GenericType.cs" />
+    <Compile Include="CSharp\Lexicon\IGeneric.cs" />
+    <Compile Include="CSharp\Lexicon\Interface.cs" />
+    <Compile Include="CSharp\Lexicon\Class.cs" />
+    <Compile Include="CSharp\Lexicon\ICSharpSyntax.cs" />
+    <Compile Include="CSharp\Lexicon\ICSharpWrapperSyntax.cs" />
+    <Compile Include="CSharp\Lexicon\MethodParameter.cs" />
+    <Compile Include="CSharp\Lexicon\Namespace.cs" />
+    <Compile Include="CSharp\Lexicon\Struct.cs" />
+    <Compile Include="CSharp\Lexicon\Type.cs" />
+    <Compile Include="CSharp\Lexicon\Using.cs" />
+    <Compile Include="CSharp\Lexicon\Variable.cs" />
+    <Compile Include="Output\CanvasGradient.cs" />
+    <Compile Include="Output\CanvasPattern.cs" />
+    <Compile Include="Output\CanvasRenderingContext2D.cs" />
+    <Compile Include="Output\ChartJs.cs" />
+    <Compile Include="Output\Element.cs" />
+    <Compile Include="Output\Enumerated.cs" />
+    <Compile Include="Output\Error.cs" />
+    <Compile Include="Output\Event.cs" />
+    <Compile Include="Output\GeoJSON.cs" />
+    <Compile Include="Output\HTMLCanvasElement.cs" />
+    <Compile Include="Output\HTMLElement.cs" />
+    <Compile Include="Output\HTMLImageElement.cs" />
+    <Compile Include="Output\HTMLVideoElement.cs" />
+    <Compile Include="Output\Intersection.cs" />
+    <Compile Include="Output\KeyboardEvent.cs" />
+    <Compile Include="Output\Leaflet.cs" />
+    <Compile Include="Output\Moment.cs" />
+    <Compile Include="Output\MouseEvent.cs" />
+    <Compile Include="Output\PropertyDescriptorMap.cs" />
+    <Compile Include="Output\RegExp.cs" />
+    <Compile Include="Output\SVGElement.cs" />
+    <Compile Include="Output\TypeAlias.cs" />
+    <Compile Include="Output\undefined.cs" />
+    <Compile Include="Output\Union.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeScript\TypeScriptParser.cs" />
+    <Compile Include="TypeScript\TypeScriptParserSettings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
